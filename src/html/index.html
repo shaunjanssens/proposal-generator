@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="Interview en checklist voor freelance webdesigners">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="css/style.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+<div class="invoice">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="img/logo.png" alt="" />
+            </div>
+
+            <h1 id="config_company"></h1>
+
+            <strong>Adres</strong>
+            <p id="config_address"></p>
+
+            <strong>BTW-nummer</strong>
+            <p id="config_vat_number"></p>
+
+            <strong>E-mail</strong>
+            <p id="config_email"></p>
+
+            <strong>Telefoon</strong>
+            <p id="config_telephone"></p>
+
+            <div class="controls">
+                <a class="button" id="doprint">Exporteren</a>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="projectdetails">
+                <div class="col">
+                    <label for="input_date_now">Datum</label>
+                    <input type="text" name="input_date_now" id="input_date_now" value="" placeholder="dd/mm/yyyy" tabindex="1">
+                </div>
+                <div class="col">
+                    <label for="input_number">Offertenummer</label>
+                    <input type="text" name="input_number" id="input_number" value="" placeholder="2015/Oxx/x" tabindex="4">
+                </div>
+                <div class="col">
+                    <label for="input_date_end">Geldig tot</label>
+                    <input type="text" name="input_date_end" id="input_date_end" value="" placeholder="dd/mm/yyyy" tabindex="2">
+                </div>
+                <div class="col">
+                    <label for="input_customer">Klant</label>
+                    <input type="text" name="input_customer" id="input_customer" value="" placeholder="Apple inc"tabindex="5">
+                </div>
+                <div class="col">
+                    <label for="input_project">Projectnaam</label>
+                    <input type="text" name="input_project" id="input_project" value="" placeholder="Secret project" tabindex="3">
+                </div>
+                <div class="col">
+                    <label for="input_time">Geschatte duur</label>
+                    <input type="text" name="input_time" id="input_time" value="" placeholder="3 maanden" tabindex="6">
+                </div>
+            </div>
+
+            <div class="table">
+                <div class="header">
+                    <div class="product-name">
+                        Beschrijving
+                    </div>
+                    <div class="product-price">
+                        Totaal
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="products"></div>
+
+                <div class="footer">
+                    <div class="total-label">
+                        Subtotaal
+                    </div>
+                    <div class="total-value" id="subtotal">
+                        0
+                    </div>
+                    <div class="total-label">
+                        BTW <input type="text" name="input_btw" id="input_btw" value="21">%
+                    </div>
+                    <div class="total-value" id="btw">
+                        0
+                    </div>
+                    <div class="total-label">
+                        Totaalbedrag
+                    </div>
+                    <div class="total-value" id="total">
+                        0
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>Handteking vooraf gegaan door “voor akkoord”</p>
+                <div class="col">
+                    <strong>ARTEpreneur CVBA so</strong>
+                    <div class="signature"></div>
+                </div>
+                <div class="col">
+                    <strong id="fill_customer"><input type="text" name="input_customer_name" id="input_customer_2" placeholder="Opdrachtgever"></strong>
+                    <div class="signature"></div>
+                </div>
+
+                <div class="comments">
+                    <p>Opmerkingen:</p>
+                    <textarea name="input_comments" id="input_comments"></textarea>
+                </div>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<div class="projectdescription">
+    <div class="container">
+        <h1>Projectomschrijving</h1>
+        <textarea id="input_description"></textarea>
+    </div>
+</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>if (!window.jQuery) { document.write('<script src="js/jquery.min.js"><\/script>'); }</script>
+
+<script type="text/javascript" src="js/handlebars.runtime.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

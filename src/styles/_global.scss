@@ -1,0 +1,347 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;;
+}
+
+input, textarea {
+    -webkit-border-radius:0;
+    border-radius:0;
+    border: 0;
+    width: 100%;
+    outline: 0;
+    letter-spacing: 2px;
+}
+
+body {
+    background: $c_white;
+    font-family: $t_font-family;
+    font-size: $t_size-base;
+    line-height: 1;
+    color: $c_black;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+/**
+ * Typography
+ */
+
+
+h1, h2, h3 {
+    font-size: $t_size-heading;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+p {
+    line-height: $t_line_height;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/**
+ * Buttons
+ */
+.button {
+    background: $c_black;
+    color: $c_white;
+    border-radius: 2px;
+    padding: $d_small $d_small*2;
+}
+
+/**
+ * Container
+ */
+.container {
+    width: 100%;
+    max-width: $d_container;
+    margin: 0 auto;
+}
+
+/**
+ * Invoice
+ */
+.invoice {
+    margin: $d_large 0;
+
+    @extend .clearfix;
+
+    .sidebar {
+        width: 300px;
+        float: left;
+        padding-right: $d_medium;
+
+        .logo {
+            img {
+                max-width: 260px;
+                max-height: 80px;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        h1 {
+            margin: $d_medium 0;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        p {
+            @extend .clearfix;
+
+            margin-top: $d_label;
+            margin-bottom: $d_medium;
+        }
+
+        .controls {
+            padding-top: $d_medium;
+        }
+    }
+
+    .main {
+        float: left;
+        width: 500px;
+        box-sizing: inherit;
+
+        .projectdetails {
+            @extend .clearfix;
+            margin-bottom: $d_large;
+
+            .col {
+                width: 250px;
+                float: left;
+                margin-bottom: $d_medium;
+
+                &:nth-child(2n + 1) {
+                    clear: both;
+                }
+                
+                label {
+                    display: block;
+                    margin-bottom: $d_label;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .table {
+            @extend .clearfix;
+            margin-bottom: $d_large;
+
+            .product-name {
+                padding: $d_small 0 $d_small - 5;
+            }
+            .product-price {
+                padding: $d_small 0;
+            }
+
+            .product-name, .total-label {
+                width: 75%;
+                float: left;
+            }
+
+            .product-price, .total-value {
+                width: 25%;
+                float: left;
+            }
+
+            .header {
+                @extend .clearfix;
+                border-bottom: 1px solid $c_black;
+                font-weight: 600;
+            }
+
+            .product {
+                @extend .clearfix;
+                position: relative;
+                border-bottom: 1px solid rgba($c_black, .3);
+                
+                .product-price:before {
+                    content: "€ ";
+                    position: absolute;
+                    padding-top: 4px;
+                }
+
+                .product-price input {
+                    padding-left: $d_small;
+                }
+
+                .product-new {
+                    display: none;
+                    position: absolute;
+                    right: -40px;
+                    font-size: 18px;
+                    font-weight: 900;
+                    padding: $d_small;
+                    cursor: pointer;
+                }
+
+                &:hover .product-new {
+                    display: block;
+                }
+            }
+
+            .footer {
+                font-weight: 600;
+                padding: $d_label;
+
+                #input_btw {
+                    display: inline;
+                    width: initial;
+                }
+
+                .total-label,
+                .total-value {
+                    padding: 10px 0;
+                }
+
+                .total-label {
+                    text-align: right;
+                    padding-right: $d_small;
+                }
+            }
+        }
+
+        footer {
+            @extend .clearfix;
+            margin-bottom: $d_medium;
+
+            .col {
+                width: 50%;
+                float: left;
+
+                &:nth-child(2n) {
+                    padding-right: $d_small/2;
+                }
+
+                &:nth-child(2n + 1) {
+                    padding-left: $d_small/2;
+                }
+            }
+
+            .signature {
+                height: 120px;
+                border: 1px solid rgba($c_black, .3);
+            }
+
+            .comments {
+                clear: both;
+                padding: $d_small 0 0 0;
+
+                textarea {
+                    min-height: 120px;
+                }
+            }
+
+            strong {
+                line-height: 30px;
+            }
+
+            input {
+                width: inherit;
+                height: 30px;
+                width: 100%;
+            }
+
+            textarea {
+                width: 100%;
+                outline: none;
+                border: 1px solid rgba($c_black, .3);
+                padding: 10px;
+                resize: none;
+            }
+        }
+    }
+}
+
+
+/**
+ * Projectomschrijving
+ */
+.projectdescription {
+    margin-bottom: $d_medium;
+
+    textarea#input_description {
+        width: 100%;
+        min-height: 300px;
+        outline: none;
+        border: 1px solid rgba($c_black, .3);
+        padding: 10px;
+        resize: none;
+        line-height: $t_line_height;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+/**
+ * Clearfix
+ */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .invoice {
+        page-break-after: always;
+
+        .sidebar {
+            width: 30%;
+
+            h1 {
+                font-size: 12px;
+                margin-bottom: $d_medium;
+            }
+            
+            .controls {
+                display: none;
+            }
+        }
+        .main {
+            width: 70%;
+
+            .projectdetails {
+                .col {
+                    width: 35%;
+                }
+            }
+        }
+    }
+
+    .projectdescription {
+
+        textarea {
+            padding: 0 !important;
+            border: none !important;
+        }
+    }
+}
